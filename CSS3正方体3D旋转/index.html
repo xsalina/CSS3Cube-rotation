@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<style>
+		ul,ol{
+			padding:0;
+			list-style:none;	
+		}
+
+		body,p,h1,h2,h3,h4,h5,h6,ul,ol,dl,dt,dd{
+			margin:0;
+		}
+		body{
+			background-color:black;
+		}
+
+		div{
+			width:800px;
+			height:690px;
+			margin:100px auto;
+			perspective:1000px;
+			
+		}
+		ul{
+			position:absolute;
+			top:0;
+			left:0;
+			width:300px;
+			height:300px;
+			margin:200px;
+			transform-style:preserve-3d;
+			animation:run 20s  forwards;
+		}
+		ul:hover{
+			animation-play-state:paused;
+		}
+		li{
+			position:absolute;
+			top:0;
+			left:0;
+			width:250px;
+			height:250px;
+			color:white;
+			text-align:center;
+			line-height:250px;
+			font-size:150px;
+		}
+		li:nth-child(1){
+			background-color:red;
+			transform-origin:top;
+			transform:rotatex(90deg);
+		}
+		li:nth-child(2){
+			background-color:orange;
+			transform-origin:left;
+			transform:rotatey(-90deg);
+		}
+		li:nth-child(3){
+			background-color:yellow;
+			transform-origin:right;
+			transform:rotatey(90deg);
+		}
+		li:nth-child(4){
+			background-color:green;
+			
+		}
+		li:nth-child(5){
+			background-color:skyblue;
+			transform:translatez(250px);
+		}
+		li:nth-child(6){
+			background-color:pink;
+			transform-origin:bottom;
+			transform:rotatex(-90deg);
+		}
+		@keyframes run{
+			20%{transform:rotatex(360deg) rotatey(360deg) rotatez(360deg);}
+			55%{transform:rotatey(270deg) translatex(150px);}
+			60%{transform:rotatex(80deg) rotatey(330deg) translatez(200px);}
+			70%{transform:rotatey(330deg) rotatex(50deg) translatex(320px);}
+			80%{transform:rotatez(360deg) rotatey(250deg) translatez(200px);}
+			880%{transform:translatex(100px) rotatey(300deg);}
+			90%{transform:translatex(300px) rotatey(300deg)  rotatez(130deg) scale(1.5);}
+			100%{transform:rotatey(310deg) rotatex(320deg)  rotatez(330deg) translatey(-200px) translatex(-200px);}
+		}  
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+	</div>
+</body>
+</html>
